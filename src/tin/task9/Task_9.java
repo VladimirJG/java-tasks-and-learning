@@ -5,7 +5,7 @@ import java.util.*;
 public class Task_9 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner("5 35 40 101 59 63");
+        Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         List<Integer> list = new LinkedList<>();
 
