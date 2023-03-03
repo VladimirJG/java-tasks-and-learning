@@ -14,11 +14,13 @@ public class Task_9 {
         if (n > 0 && n < 100) {
             for (int i = 0; i < n; i++) {
                 int num = sc.nextInt();
-                list.add(num);
-                if (num >= 100) {
-                    list0.add(num);
-                } else {
-                    list1.add(num);
+                if (num <= 300) {
+                    list.add(num);
+                    if (num >= 100) {
+                        list0.add(num);
+                    } else {
+                        list1.add(num);
+                    }
                 }
             }
         }
@@ -39,12 +41,12 @@ public class Task_9 {
                 }
             }
         }
-        if (list0.size() % 2 != 0 ) {
+        if (list0.size() % 2 != 0) {
             sum -= Collections.max(list1);
         }
         System.out.println(list);
         System.out.println(sum);
-        System.out.println(45 + 268 + 31 + 115 - 248 + 101 - 198 - 76);//числа которые идут после
+        System.out.println(45 + 268 + 31 + 115 - 248 + 101 - 198 - 76);//числа, которые идут после
         System.out.println(Collections.max(list1));
         System.out.println(list2);
     }
