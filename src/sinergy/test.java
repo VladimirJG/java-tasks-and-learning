@@ -19,7 +19,7 @@ public class test {
 
         //list.forEach(s -> System.out.println(Arrays.toString(new String[]{s.split(" ")[1]})));
         // list.forEach(s-> list2.add(Arrays.toString(new String[]{s.split(" ")[1]})));
-        list2.addAll(list.stream().map(s -> s.split(" ")[1]).toList());
+        list.stream().map(s -> s.split(" ")[1]).collect(Collectors.toList()).forEach(list2::add);
 
         System.out.println(list2);
     }

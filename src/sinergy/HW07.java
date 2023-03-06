@@ -35,9 +35,7 @@ public class HW07 {
      */
     public static List<String> methodTwo(List<String> names) {
         // Твой код здесь
-        ArrayList<String> list = new ArrayList<>();
-        names.stream().sorted(Comparator.comparing(s -> s.split(",")[0])).forEach(list::add);
-        return list;
+        return new ArrayList<>(names.stream().map(s -> s.split(" ")[1]).distinct().toList());
     }
 
     /**
