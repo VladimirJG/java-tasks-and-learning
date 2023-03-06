@@ -51,21 +51,20 @@ public class HW5 {
         // Напиши здесь свою реализацию класса Person
 
         private String name;
-        private Integer protection;
-        private Integer health;
-
-
-        public Person(String name) {
-            this.name = name;
-            protection = 0;
-            health = 50 ;
-        }
+        private Integer protection = 0;
+        private Integer health = 50;
 
         protected Person(String name, Integer protection, Integer health) {
             this.name = name;
             this.protection = protection;
             this.health = health;
         }
+
+        public Person(String name) {
+            this.name = name;
+
+        }
+
 
         public String getName() {
             return name;
@@ -100,13 +99,14 @@ public class HW5 {
 
     public static class Mage extends Person {
 
-        private Integer protection;
-        private Integer health;
+        private String name;
+        Integer protection;
+        Integer health;
 
         public Mage(String name) {
             super(name);
-            this.protection = 15;
-            this.health = 100;
+            protection = 15;
+            health = 100;
         }
 
         Person mage = new Mage("m");
