@@ -11,7 +11,8 @@ public class test {
         ArrayList<String> list = new ArrayList<>();
         ArrayList<String> list2 = new ArrayList<>();
         ArrayList<String> list3 = new ArrayList<>();
-        Collections.addAll(list, "Lаша Машев", "Jora Bora", "Input Strimov", "Lран Упашев");
+        Collections.addAll(list, "Lаша Машев", "Jora Bora", "Input Strimov", "Lран Упашев",
+                "Baran Wupashev", "Alen Wakashev", "Hurry Woo", "Dany Weweto");
         System.out.println(list);
        /* for (int i = 0; i < list.size(); i++) {
             String[] m = list.get(i).split(" ");
@@ -28,8 +29,9 @@ public class test {
         list2.stream().filter(s -> s.contains("L")).forEach(list3::add);
         System.out.println(list3);*/
 
-        list.stream().map(s -> s.split(" ")[0]).filter(s -> s.contains("L")).forEach(list2::add);
-        System.out.println(list2);
+// 3 - finish
+        /*list.stream().map(s -> s.split(" ")[0]).filter(s -> s.contains("L")).forEach(list2::add);
+        System.out.println(list2);*/
 
 //1
         //list.forEach(s -> System.out.println(Arrays.toString(new String[]{s.split(" ")[1]})));
@@ -38,6 +40,17 @@ public class test {
   //2
        /* list.stream().map(s -> s.split(" ")[1]).collect(Collectors.toList()).forEach(list2::add);
         System.out.println(list2);*/
+
+        //4 Метод должен вернуть список уникальных фамилий, начинающихся с W, отсортированный по алфавиту
+// сортировка по имени
+        /*list.stream().sorted().map(s -> s.split(" ")[1]).filter(s -> s.contains("W")).forEach(list2::add);
+        System.out.println(list2);*/
+
+        // сортировка по второй букве фамилии
+        /*list.stream().map(s -> s.split(" ")[1]).filter(s -> s.contains("W")).sorted().forEach(list2::add);
+        System.out.println(list2);*/
+
+
 
     }
 }

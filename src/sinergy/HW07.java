@@ -43,7 +43,7 @@ public class HW07 {
      */
     public static List<String> methodThree(List<String> names) {
         // Твой код здесь
-        ArrayList<String>list = new ArrayList<>();
+        List<String>list = new ArrayList<>();
         names.stream().map(s -> s.split(" ")[0]).filter(s -> s.contains("L")).distinct().forEach(list::add);
         return list;
     }
@@ -53,7 +53,7 @@ public class HW07 {
      */
     public static List<String> methodFour(List<String> names) {
         // Твой код здесь
-        return Collections.emptyList();
+        return new ArrayList<>(names.stream().map(s -> s.split(" ")[1]).distinct().filter(s -> s.contains("W")).sorted().toList());
     }
 
     /**
@@ -61,6 +61,7 @@ public class HW07 {
      */
     public static Integer methodFive(List<String> names) {
         // Твой код здесь
+
         return 0;
     }
 
