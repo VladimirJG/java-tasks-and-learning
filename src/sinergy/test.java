@@ -1,10 +1,11 @@
 package sinergy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
+import static java.util.Arrays.spliterator;
 
 public class test {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class test {
         ArrayList<String> list2 = new ArrayList<>();
         ArrayList<String> list3 = new ArrayList<>();
         Collections.addAll(list, "Lашаnaa Машев", "Jora Bora", "Input Strimov", "Lран Упашев",
-                "Baran Wupashev", "Alen Wakashev", "Hurry Woo", "Dany Weweto");
+                "Baran Wupashev", "Alen Wakashev", "Hurry Woo", "Dany Weweto", "Weweto Strimov");
         System.out.println(list);
        /* for (int i = 0; i < list.size(); i++) {
             String[] m = list.get(i).split(" ");
@@ -37,7 +38,7 @@ public class test {
         //list.forEach(s -> System.out.println(Arrays.toString(new String[]{s.split(" ")[1]})));
         // list.forEach(s-> list2.add(Arrays.toString(new String[]{s.split(" ")[1]})));
 
-  //2
+        //2
        /* list.stream().map(s -> s.split(" ")[1]).collect(Collectors.toList()).forEach(list2::add);
         System.out.println(list2);*/
 
@@ -51,8 +52,34 @@ public class test {
         System.out.println(list2);*/
 
 //5 Метод должен вернуть количество имен длинее чем 6 символов
-        int n = (int) list.stream().map(s -> s.split(" ")[0]).filter(s -> (s.length()>6)).count();
-        System.out.println(n);
+        /*int n = (int) list.stream().map(s -> s.split(" ")[0]).filter(s -> (s.length()>6)).count();
+        System.out.println(n);*/
 
+        //6 Метод должен вернуть суммарное количество уникальных имён и фамилий, длиннее 5 символов
+
+        //     * P. S. Самостоятельно почитайте про метод flatMap()
+
+       /* int n = (int) list.stream().map(s -> s.split(" ")[0]).filter(s -> (s.length() > 5)).distinct().count();
+        int m = (int) list.stream().map(s -> s.split(" ")[1]).filter(s -> (s.length() > 5)).distinct().count();
+        System.out.println(n + m);*/
+
+        /*int e = (int) Stream.of(List.of(list.stream().map(s -> s.split(" ")[0]).filter(s -> (s.length() > 5))),
+                        List.of(list.stream().map(s -> s.split(" ")[1]).filter(s -> (s.length() > 5))))
+                .flatMap(Collection::stream).count();
+        System.out.println(e);*/
+
+        /*list.stream().map(s -> s.split(" ")).toList().stream().flatMap(x-> Arrays.stream(x).map(y->y.split(" ")))
+                .distinct().toList().forEach(y-> System.out.println(Arrays.toString(y)));*/
+
+        /*String[] array = {"Java", "Ruuuuussshhh"};
+        Stream<String> streamOfArray = Arrays.stream(array);
+        streamOfArray.map(s -> s.split("")) //Преобразование слова в массив букв
+                .flatMap(Arrays::stream).distinct() //выравнивает каждый сгенерированный поток в один поток
+                .collect(Collectors.toList()).forEach(System.out::print);
+*/
+
+       int n = (int) Stream.concat(list.stream().map(s -> s.split(" ")[0]),list.stream().map(s -> s.split(" ")[1])).filter(s -> (s.length()>5))
+                .distinct().count();
+        System.out.println(n);
     }
 }
