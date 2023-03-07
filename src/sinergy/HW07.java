@@ -43,7 +43,9 @@ public class HW07 {
      */
     public static List<String> methodThree(List<String> names) {
         // Твой код здесь
-        return Collections.emptyList();
+        ArrayList<String>list = new ArrayList<>();
+        names.stream().map(s -> s.split(" ")[0]).filter(s -> s.contains("L")).distinct().forEach(list::add);
+        return list;
     }
 
     /**
