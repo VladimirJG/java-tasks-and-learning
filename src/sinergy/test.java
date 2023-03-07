@@ -11,7 +11,7 @@ public class test {
         ArrayList<String> list = new ArrayList<>();
         ArrayList<String> list2 = new ArrayList<>();
         ArrayList<String> list3 = new ArrayList<>();
-        Collections.addAll(list, "Lаша Машев", "Jora Bora", "Input Strimov", "Lран Упашев",
+        Collections.addAll(list, "Lашаnaa Машев", "Jora Bora", "Input Strimov", "Lран Упашев",
                 "Baran Wupashev", "Alen Wakashev", "Hurry Woo", "Dany Weweto");
         System.out.println(list);
        /* for (int i = 0; i < list.size(); i++) {
@@ -50,7 +50,9 @@ public class test {
         /*list.stream().map(s -> s.split(" ")[1]).filter(s -> s.contains("W")).sorted().forEach(list2::add);
         System.out.println(list2);*/
 
-
+//5 Метод должен вернуть количество имен длинее чем 6 символов
+        int n = (int) list.stream().map(s -> s.split(" ")[0]).filter(s -> (s.length()>6)).count();
+        System.out.println(n);
 
     }
 }

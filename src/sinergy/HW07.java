@@ -61,8 +61,8 @@ public class HW07 {
      */
     public static Integer methodFive(List<String> names) {
         // Твой код здесь
-
-        return 0;
+        int n  = (int) names.stream().map(s -> s.split(" ")[0]).filter(s -> (s.length()>6)).distinct().count();
+        return n;
     }
 
     /**
