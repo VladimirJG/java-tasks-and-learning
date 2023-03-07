@@ -78,8 +78,8 @@ public class test {
                 .collect(Collectors.toList()).forEach(System.out::print);
 */
 
-       int n = (int) Stream.concat(list.stream().map(s -> s.split(" ")[0]),list.stream().map(s -> s.split(" ")[1])).filter(s -> (s.length()>5))
-                .distinct().count();
+       int n = (int) Stream.concat(list.stream().map(s -> s.split(" ")[0]),list.stream().map(s -> s.split(" ")[1]))
+               .filter(s -> (s.length()>5)).distinct().count();
         System.out.println(n);
     }
 }
