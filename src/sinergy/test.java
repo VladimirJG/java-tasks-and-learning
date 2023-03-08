@@ -77,9 +77,26 @@ public class test {
                 .flatMap(Arrays::stream).distinct() //выравнивает каждый сгенерированный поток в один поток
                 .collect(Collectors.toList()).forEach(System.out::print);
 */
-
-       int n = (int) Stream.concat(list.stream().map(s -> s.split(" ")[0]),list.stream().map(s -> s.split(" ")[1]))
+//finished
+   /*    int n = (int) Stream.concat(list.stream().map(s -> s.split(" ")[0]),list.stream().map(s -> s.split(" ")[1]))
                .filter(s -> (s.length()>5)).distinct().count();
         System.out.println(n);
+*/
+        // 7  Метод должен вернуть имена людей, чья фамилия начинается с K или S, в формате имя + первая буква фамилии,
+        //     * например "David Z.". Список должен быть отсортирован по алфавиту и состоять только из уникальных значений
+/*
+        for (int i = 0; i < list.size(); i++) {
+            String[] m = (list.get(i).split(" "));
+            for (int i1 = 0; i1 < m.length; i1++) {
+                list2.add(m[i1]);
+            }
+        }
+        System.out.println(list2);*/
+//+++++++++++++++++++++++++++++
+        //работа flatMap
+       /* list.stream().map(s -> s.split(" ")).flatMap(strings -> Arrays.stream(strings)).distinct()
+                .forEach(list2::add);
+        System.out.println(list2);*/
+//+++++++++++++++++++++++++++++
     }
 }
