@@ -82,7 +82,8 @@ public class HW07 {
      */
     public static List<String> methodSeven(List<String> names) {
         // Твой код здесь
-        return Collections.emptyList();
+        return names.stream().filter(s -> s.contains("K")).collect(Collectors.toList());
+
     }
 
     public static void main(String[] args) {

@@ -65,7 +65,6 @@ public class HW5 {
 
         }
 
-
         public String getName() {
             return name;
         }
@@ -79,10 +78,11 @@ public class HW5 {
         }
 
         String announce() {
-            return this.name + " имеет характеристики: " + this.health + " здоровья и " + this.protection + " защиты";
+            return "Person " + getName() + " имеет характеристики: " + getHealth() + " здоровья и " + getProtection() + " защиты";
         }
 
         void takeDamage(Integer damage) throws PersonDead, Exception {
+
             if (damage < 0) {
                 throw new Exception();
             }
@@ -99,68 +99,77 @@ public class HW5 {
 
     public static class Mage extends Person {
 
-        private String name;
-        Integer protection;
-        Integer health;
-
-        public Mage(String name) {
+        Mage(String name) {
             super(name);
-            protection = 15;
-            health = 100;
         }
 
-        Person mage = new Mage("m");
+        private Integer protection = 15;
+        private Integer health = 100;
+
+        @Override
+        public Integer getProtection() {
+            return protection;
+        }
+
+        @Override
+        public Integer getHealth() {
+            return health;
+        }
 
         @Override
         String announce() {
-            return mage.name + mage.announce();
+            return "Mage" + super.announce();
         }
 
         @Override
-        void takeDamage(Integer damage) throws Exception, PersonDead {
+        void takeDamage(Integer damage) throws PersonDead, Exception {
+            super.takeDamage(damage);
             health = health - (damage - protection - health % 10);
+            if (health <= 0) {
+                throw new PersonDead("Game over");
+            }
         }
 
         Integer fireBall() {
-            try {
-                mage.takeDamage(45);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-            return mage.health;
+            return 45;
         }
     }
 
     public static class Archer extends Person {
-        private String name;
-        private Integer protection;
-        private Integer health;
-
-        public Archer(String name) {
+        Archer(String name) {
             super(name);
-            this.protection = 12;
-            this.health = 120;
         }
 
-        Person archer = new Archer("A");
+        private Integer protection = 12;
+        private Integer health = 120;
+
+
+        @Override
+        public Integer getProtection() {
+            return protection;
+        }
+
+        @Override
+        public Integer getHealth() {
+            return health;
+        }
 
         @Override
         String announce() {
-            return name + archer.announce();
+            return "Archer" + super.announce();
         }
 
         @Override
-        void takeDamage(Integer damage) throws Exception, PersonDead {
+        void takeDamage(Integer damage) throws PersonDead, Exception {
+            super.takeDamage(damage);
             health = health - (damage - protection + health % 10);
+            if (health <= 0) {
+                throw new PersonDead("Ты мертв 1");
+            }
         }
 
         Integer shootBow() {
-            try {
-                archer.takeDamage(40 + health % 10);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-            return archer.health;
+            return 40 + health % 10;
         }
 
         // Напиши здесь свою реализацию класса Archer (не забудь про наследование от Person)

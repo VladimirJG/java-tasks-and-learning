@@ -98,5 +98,19 @@ public class test {
                 .forEach(list2::add);
         System.out.println(list2);*/
 //+++++++++++++++++++++++++++++
+
+       /* Stream.of("one", "two", "three", "four")
+                .filter(e -> e.length() > 3)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(String::toUpperCase)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .collect(Collectors.toList());*/
+
+        /*list.stream().map(s -> s.split(" ")).flatMap(strings -> Arrays.stream(strings).skip(1))
+                .forEach(list2::add);
+        System.out.println(list2);*/
+
+        list.stream().map(s -> s.split(" ")).takeWhile(strings -> Arrays.stream(strings).filter(s -> s.contains("W")).isParallel())
+                .forEach(System.out::println);
     }
 }
