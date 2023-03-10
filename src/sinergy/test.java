@@ -94,7 +94,7 @@ public class test {
         System.out.println(list2);*/
 //+++++++++++++++++++++++++++++
         //работа flatMap
-       /* list.stream().map(s -> s.split(" ")).flatMap(strings -> Arrays.stream(strings)).distinct()
+        /*list.stream().map(s -> s.split(" ")).flatMap(strings -> Arrays.stream(strings)).distinct()
                 .forEach(list2::add);
         System.out.println(list2);*/
 //+++++++++++++++++++++++++++++
@@ -110,7 +110,8 @@ public class test {
                 .forEach(list2::add);
         System.out.println(list2);*/
 
-        list.stream().map(s -> s.split(" ")).takeWhile(strings -> Arrays.stream(strings).filter(s -> s.contains("W")).isParallel())
-                .forEach(System.out::println);
+        Stream<String> wordsStream = Stream.of("мама", "мыла", "раму");
+        Optional<String> sentence = wordsStream.reduce((x,y)->x + " " + y);
+        System.out.println(sentence.get());
     }
 }

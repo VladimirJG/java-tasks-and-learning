@@ -2,11 +2,7 @@ package sinergy;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -82,7 +78,10 @@ public class HW07 {
      */
     public static List<String> methodSeven(List<String> names) {
         // Твой код здесь
-        return names.stream().filter(s -> s.contains("K")).collect(Collectors.toList());
+        return names.stream().filter(s -> s.matches("\\w+ [KS]\\w+"))
+                .map(s -> s.substring(0, s.indexOf(" ") + 2) + ".")
+                .sorted().distinct()
+                .collect(Collectors.toList());
 
     }
 
