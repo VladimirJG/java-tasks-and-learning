@@ -67,9 +67,12 @@ public class HW07 {
      */
     public static Integer methodSix(List<String> names) {
         // Твой код здесь
-        int n = (int) Stream.concat(names.stream().map(s -> s.split(" ")[0]), names.stream().map(s -> s.split(" ")[1]))
+       /* int n = (int) Stream.concat(names.stream().map(s -> s.split(" ")[0]), names.stream().map(s -> s.split(" ")[1]))
                 .filter(s -> (s.length() > 5)).distinct().count();
-        return n;
+        return n;*/
+
+        return (int)names.stream().map(n->Arrays.asList(n.split(" "))).flatMap(Collection::stream)
+                .filter(n->n.length()>5).distinct().count();
     }
 
     /**

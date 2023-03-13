@@ -20,7 +20,7 @@ public class task1 {
     }
 
     public static class TableAdapter implements BTable {
-        private ATable aTable;
+       final private ATable aTable;
 
         public TableAdapter(ATable aTable) {
             this.aTable = aTable;
