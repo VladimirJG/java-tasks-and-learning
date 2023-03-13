@@ -81,11 +81,14 @@ public class HW07 {
      */
     public static List<String> methodSeven(List<String> names) {
         // Твой код здесь
-        return names.stream().filter(s -> s.matches("\\w+ [KS]\\w+"))
+       /* return names.stream().filter(s -> s.matches("\\w+ [KS]\\w+"))
                 .map(s -> s.substring(0, s.indexOf(" ") + 2) + ".")
                 .sorted().distinct()
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
 
+        return names.stream().map(n->n.split(" ")).filter(arr->arr[1]
+                .startsWith("K")||arr[1].startsWith("S"))
+                .map(arr->arr[0] + " "+ arr[1].charAt(0) + ".").distinct().sorted().toList();
     }
 
     public static void main(String[] args) {
