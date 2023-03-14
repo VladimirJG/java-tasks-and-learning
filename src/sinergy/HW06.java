@@ -59,7 +59,7 @@ public class HW06 {
             List<String> list = new ArrayList<>();
             String s = "";
             if (times > 0) {
-                for (int i = 0; i < times; i++) {
+                for (int i = 0; i < times-1; i++) {
                     s += sound + " ";
                 }
                 s += sound;
