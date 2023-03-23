@@ -1,7 +1,7 @@
 package other_task;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.List;
 
 //Example 1:
@@ -17,30 +17,30 @@ public class Task6 {
     public static void main(String[] args) {
         String s = "babaddgtot";
         List<String> list = new ArrayList<>();
-        String newS = "";
+        StringBuilder newS = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             String symbol = String.valueOf(s.charAt(i));
-            if (!newS.contains(symbol)) {
-                newS += symbol;
+            if (!newS.toString().contains(symbol)) {
+                newS.append(symbol);
             } else {
-                newS += symbol;
-                list.add(str(newS));
-                newS = "";
+                newS.append(symbol);
+                list.add(str(newS.toString()));
+                newS = new StringBuilder();
             }
         }
         System.out.println(list);
     }
     public static String str(String arr){
-        String str="";
+        StringBuilder str= new StringBuilder();
         for (int i = arr.length()-1; i > 0; i--) {
             String n = String.valueOf(arr.charAt(i));
-            str+=n;
+            str.append(n);
             if (String.valueOf(arr.charAt(i-1)).equals(String.valueOf(arr.charAt(arr.length()-1)))){
-                str+=String.valueOf(arr.charAt(arr.length()-1));
+                str.append(arr.charAt(arr.length() - 1));
                 break;
             }
         }
-        return str;
+        return str.toString();
     }
 
 
