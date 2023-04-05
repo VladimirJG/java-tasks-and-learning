@@ -2,11 +2,6 @@ package other_task;
 //Напишите функцию, которая находит самую длинную строку общего префикса среди массива строк.
 //Если общего префикса нет, вернуть пустую строку "".
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 //Example 1:
 //
 //Input: strs = ["flower","flow","flight"]
@@ -16,7 +11,7 @@ import java.util.List;
 //Input: strs = ["dog","racecar","car"]
 //Output: ""
 //Explanation: There is no common prefix among the input strings.
-public class task8 {
+public class Task14СамыйДлинныйОбщийПрефикс {
     public static void main(String[] args) {
         String[] strs = {"flower", "flow", "flight", "floor"};
         System.out.println(longestCommonPrefix(strs));
