@@ -32,6 +32,8 @@ public class task8 {
                     String substr2 = String.valueOf(str1.charAt(i1));
                     if (substr1.equals(substr2)) {
                         str2 += substr1;
+                    }else {
+                        break;
                     }
                 }
             }
