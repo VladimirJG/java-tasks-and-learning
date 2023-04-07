@@ -1,7 +1,4 @@
-package other_task;
-
-import java.util.ArrayList;
-import java.util.List;
+package other_task_leet_code;
 
 //Input: x = 121
 //Output: true

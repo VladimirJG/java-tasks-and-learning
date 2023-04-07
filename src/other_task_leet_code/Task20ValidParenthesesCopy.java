@@ -1,4 +1,4 @@
-package other_task;
+package other_task_leet_code;
 
 import java.util.Stack;
 
