@@ -1,4 +1,4 @@
-package JavaR2.multih;
+package JavaR2.multithread;
 
 //Создать public static class TestThread - нить с интерфейсом Runnable.
 //TestThread должен выводить в консоль "My first thread".

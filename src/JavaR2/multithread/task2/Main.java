@@ -1,4 +1,4 @@
-package JavaR2.multih.task2;
+package JavaR2.multithread.task2;
 
 public class Main {
     public static void main(String[] args) {

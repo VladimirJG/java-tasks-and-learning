@@ -1,4 +1,4 @@
-package JavaR2.multih;
+package JavaR2.multithread;
 
 //1. Создать public static класс TestThread, унаследованный от класса Thread.
 //2. Создать статик блок внутри TestThread, который выводит в консоль "it's a static block inside TestThread".
