@@ -1,4 +1,4 @@
-package JavaR2.interfaceCat;
+package JavaR2.polimorfismCat;
 
 public class Aibolit {
     public void healthCat(Cat cat){

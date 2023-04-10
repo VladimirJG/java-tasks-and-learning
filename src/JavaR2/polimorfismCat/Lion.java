@@ -1,4 +1,4 @@
-package JavaR2.interfaceCat;
+package JavaR2.polimorfismCat;
 
 public class Lion extends Cat{
     @Override
