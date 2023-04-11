@@ -12,7 +12,7 @@ import java.util.List;
 //Закрыть поток ввода-вывода.
 public class Task4 {
     public static void main(String[] args) throws IOException {
-        FileInputStream stream = new FileInputStream("C:\\Users\\ASUS\\Practice\\java-tasks-and-learning\\src\\hyt");
+        FileInputStream stream = new FileInputStream("C:\\Users\\ASUS\\Practice\\java-tasks-and-learning\\src\\out");
         List<Integer> listOfStream = new ArrayList<>();
         while (stream.available() > 0) {
             listOfStream.add(stream.read());

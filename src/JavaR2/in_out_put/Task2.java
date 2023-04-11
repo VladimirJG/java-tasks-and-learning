@@ -9,7 +9,7 @@ import java.io.IOException;
 ////Закрыть поток ввода-вывода.
 public class Task2 {
     public static void main(String[] args) throws IOException {
-        FileInputStream stream = new FileInputStream("C:\\Users\\ASUS\\Practice\\java-tasks-and-learning\\src\\hyt");
+        FileInputStream stream = new FileInputStream("C:\\Users\\ASUS\\Practice\\java-tasks-and-learning\\src\\out");
 
         int num = 0;
 
