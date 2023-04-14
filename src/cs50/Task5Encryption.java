@@ -11,9 +11,9 @@ import java.util.Scanner;
 //Вывести на экран зашифрованное сообщение
 public class Task5Encryption {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String text = scanner.nextLine();
-        int key = scanner.nextInt();
+       // Scanner scanner = new Scanner("Abcd 3");
+        String text = "A bC,d";
+        int key = 3;
         newEncryption(text, key);
 
 
@@ -42,7 +42,7 @@ public class Task5Encryption {
                 }
             } else if (String.valueOf(symbol).equals(String.valueOf(symbol).toLowerCase())) {
                 for (int i1 = 0; i1 < lowArray.length; i1++) {
-                    char lowSymbol = lowArray[i];
+                    char lowSymbol = lowArray[i1];
                     if (symbol == lowSymbol) {
                         if (i1 + key >= lowArray.length) {
                             newCryptString += String.valueOf(lowArray[i1 + key - lowArray.length]);
@@ -53,8 +53,9 @@ public class Task5Encryption {
                 }
 
             } else {
+              //  newCryptString+=String.valueOf(symbol);
                 for (int i1 = 0; i1 < anotherSymbol.size(); i1++) {
-                    char anotherSym = anotherSymbol.get(i);
+                    char anotherSym = anotherSymbol.get(i1);
                     if (symbol == anotherSym) {
                         if (i1 + key >= anotherSymbol.size()) {
                             newCryptString += String.valueOf(anotherSymbol.get(i1 + key - anotherSymbol.size()));
@@ -95,7 +96,7 @@ public class Task5Encryption {
             int anotherCharSymbol = i;
             listOfChars.add((char) anotherCharSymbol);
         }
-        for (int i = 0; i < listOfChars.size(); i++) {
+        /*for (int i = 0; i < listOfChars.size(); i++) {
             char listSymbol = listOfChars.get(i);
             for (int i1 = 0; i1 < lowArray.length; i1++) {
                 char lowSymbol = lowArray[i1];
@@ -109,7 +110,7 @@ public class Task5Encryption {
                     listOfChars.remove(listOfChars.get(i));
                 }
             }
-        }
+        }*/
         return listOfChars;
     }
 }
