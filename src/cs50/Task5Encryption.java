@@ -93,8 +93,7 @@ public class Task5Encryption {
         char[] uppArray = uppArrayCreate();
         List<Character> listOfChars = new ArrayList<>();
         for (int i = 0; i < 128; i++) {
-            int anotherCharSymbol = i;
-            listOfChars.add((char) anotherCharSymbol);
+            listOfChars.add((char) i);
         }
         /*for (int i = 0; i < listOfChars.size(); i++) {
             char listSymbol = listOfChars.get(i);
