@@ -26,6 +26,7 @@ public class Test3 {
                 j++;
             }
         }
+        Arrays.sort(c);
         System.out.println(Arrays.toString(c));
 
         return c;
