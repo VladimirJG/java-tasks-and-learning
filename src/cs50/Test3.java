@@ -26,7 +26,19 @@ public class Test3 {
                 j++;
             }
         }
-        Arrays.sort(c);
+        System.out.println(Arrays.toString(c));
+
+
+        for (int i = 0; i < c.length; i++) {
+
+            for (int i1 = i+1; i1 < c.length; i1++) {
+               if (c[i]>c[i1]){
+                   int replaceNum = c[i];
+                   c[i]=c[i1];
+                   c[i1]= replaceNum;
+               }
+            }
+        }
         System.out.println(Arrays.toString(c));
 
         return c;
