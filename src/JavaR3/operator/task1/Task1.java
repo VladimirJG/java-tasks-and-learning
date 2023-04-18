@@ -1,4 +1,4 @@
-package JavaR3.operator;
+package JavaR3.operator.task1;
 //1. Даны IP-адрес и маска подсети, необходимо вычислить адрес сети - реализуй метод getNetAddress.
 //Используй операцию поразрядной конъюнкции (логическое И).
 //
@@ -27,31 +27,16 @@ public class Task1 {
     }
 
     public static byte[] getNetAddress(byte[] ip, byte[] mask) {
-        return new byte[4];
+        byte[] newByte = new byte[ip.length];
+        for (int i = 0; i < 4; i++) {
+            newByte[i] = (byte) ((ip[i] & 0xFF) & (mask[i] & 0xFF));
+        }
+        return newByte;
     }
 
     public static void print(byte[] bytes) {
-        int intByte = 0;
-        String[] string = new String[bytes.length];
-        for (int i = 0; i < bytes.length; i++) {
-            if (bytes[i] < 0) {
-                intByte = 256 + bytes[i];
-            } else {
-                intByte = bytes[i];
-            }
-            String str = "";
-            int[] biTable = {128, 64, 32, 16, 8, 4, 2, 1};
-            for (int i1 = 0; i1 < biTable.length; i1++) {
-                int endNum = intByte - biTable[i1];
-                if (endNum >= 0) {
-                    str += "1";
-                    intByte = endNum;
-                } else {
-                    str += "0";
-                }
-            }
-            string[i] = str;
+        for (byte b: bytes) {
+            System.out.format("%08d ", Integer.parseInt(Integer.toBinaryString(b & 255)));
         }
-        System.out.println("//" + string[0] + " " + string[1] + " " + string[2] + " " + string[3]);
     }
 }
