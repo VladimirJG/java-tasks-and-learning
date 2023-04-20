@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class TwoArrInOne {
     public static void main(String[] args) {
         int[] arr1 = {0, 7, 9, 15};
-        int[] arr2 = {1, 2, 3, 5, 8, 11, 13};
+        int[] arr2 = {1, 2, 3, 5, 8, 11, 13, 17};
         concatenateArr(arr1, arr2);
     }
 
@@ -19,12 +19,29 @@ public class TwoArrInOne {
             } else {
                 endArr[j] = Math.min(a[i], b[i]);
                 endArr[j + 1] = Math.max(a[i], b[i]);
+                if (j >= 2 && endArr[j] < endArr[j - 2]) {
+                    int n = endArr[j - 2];
+                    int m = endArr[j - 1];
+                    endArr[j - 2] = endArr[j];
+                    endArr[j - 1] = n;
+                    endArr[j] = m;
+                } else if (j >= 2 && endArr[j] < endArr[j - 1]) {
+                    int n = endArr[j - 1];
+                    endArr[j - 1] = endArr[j];
+                    endArr[j] = n;
+                }
                 j++;
             }
-            if (j >= 2 && endArr[j-1] < endArr[j - 2]) {
+            if (j >= 2 && endArr[j] < endArr[j - 2]) {
                 int n = endArr[j - 2];
-                endArr[j - 2] = endArr[j-1];
-                endArr[j-1] = n;
+                int m = endArr[j - 1];
+                endArr[j - 2] = endArr[j];
+                endArr[j - 1] = n;
+                endArr[j] = m;
+            } else if (endArr[j] < endArr[j - 1]) {
+                int n = endArr[j - 1];
+                endArr[j - 1] = endArr[j];
+                endArr[j] = n;
             }
         }
         System.out.println(Arrays.toString(endArr));
