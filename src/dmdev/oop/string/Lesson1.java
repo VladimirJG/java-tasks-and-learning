@@ -41,7 +41,7 @@ public class Lesson1 {
          * отдельными частями. Вывести массив
          */
 
-        String string4 = "1234567890";
+        String string4 = "12367890";
         int n = 3;
         String[] arr = splitArr(string4, n);
         System.out.println(Arrays.toString(arr));
