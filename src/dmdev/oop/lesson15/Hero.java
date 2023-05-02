@@ -7,7 +7,13 @@ public class Hero {
         this.name = name;
     }
 
+    public void attackEnemy() {
+        System.out.println(name + " атакует врага");
+    }
+
     public String getName() {
         return name;
     }
+
+
 }
