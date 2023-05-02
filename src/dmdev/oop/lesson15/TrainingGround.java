@@ -8,17 +8,19 @@ public class TrainingGround {
         Hero warrior1 = new Warrior("Воин Джун");
         Hero mage1 = new Mage("Маг Магомед");
         Hero archer1 = new Archer("Лучник Илья");
+        Enemy enemy = new Enemy("Гоблин", 100);
+
 
        /* warrior1.attackEnemy();
         mage1.attackEnemy();
         archer1.attackEnemy();*/
 
-        attackEnemy(warrior1, archer1, mage1);
+        attackEnemy(enemy, warrior1, archer1, mage1);
     }
 
-    public static void attackEnemy(Hero... heroes) {
+    public static void attackEnemy(Enemy enemy, Hero... heroes) {
         for (Hero hero : heroes) {
-            hero.attackEnemy();
+            hero.attackEnemy(enemy);
         }
     }
 }

@@ -7,8 +7,8 @@ public class Hero {
         this.name = name;
     }
 
-    public void attackEnemy() {
-        System.out.println(name + " атакует врага");
+    public void attackEnemy(Enemy enemy) {
+        System.out.println(name + " атакует врага" + enemy.getName());
     }
 
     public String getName() {

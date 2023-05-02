@@ -6,7 +6,7 @@ public class Mage extends Hero {
     }
 
     @Override
-    public void attackEnemy() {
-        System.out.println(getName() + " создает заклинание");
+    public void attackEnemy(Enemy enemy) {
+        System.out.println(getName() + " создает заклинание против " + enemy.getName());
     }
 }
