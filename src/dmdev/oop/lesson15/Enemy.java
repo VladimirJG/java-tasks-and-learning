@@ -1,6 +1,6 @@
 package dmdev.oop.lesson15;
 
-public class Enemy {
+public class Enemy implements Mortal {
     private String name;
     private int health;
 
@@ -14,6 +14,11 @@ public class Enemy {
         System.out.println(name + " получил урон " + damage + ". Осталось здоровья " + health);
     }
 
+    @Override
+    public boolean isAlive() {
+        return health > 0;
+    }
+
     public String getName() {
         return name;
     }
@@ -25,5 +30,4 @@ public class Enemy {
     public void setHealth(int health) {
         this.health = health;
     }
-
 }
