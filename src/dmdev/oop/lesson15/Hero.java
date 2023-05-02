@@ -1,6 +1,6 @@
 package dmdev.oop.lesson15;
 
-public class Hero {
+public abstract class Hero {
     private String name;
     private int damage;
 
@@ -10,9 +10,7 @@ public class Hero {
     }
 
 
-    public void attackEnemy(Enemy enemy) {
-        System.out.println(name + " атакует врага" + enemy.getName());
-    }
+    public abstract void attackEnemy(Enemy enemy);
 
     public String getName() {
         return name;
