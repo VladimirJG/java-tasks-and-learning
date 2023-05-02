@@ -21,6 +21,8 @@ public class TrainingGround {
             for (Hero hero : heroes) {
                 if (enemy.isAlive()) {
                     hero.attackEnemy(enemy);
+                }else {
+                    System.out.println(enemy.getName() + " побежден");
                 }
             }
         }
