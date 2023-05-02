@@ -11,6 +11,7 @@ public class Enemy {
 
     public void takeDamage(int damage) {
         this.health -= Math.min(health, damage);
+        System.out.println(name + " получил урон " + damage + ". Осталось здоровья " + health);
     }
 
     public String getName() {
