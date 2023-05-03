@@ -1,6 +1,10 @@
 package dmdev.oop.generic;
 
-public class List<T> {
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Iterator;
+
+public class List<T> implements Iterable<T> {
     private T[] objects;
     private int size;
 
@@ -16,7 +20,28 @@ public class List<T> {
         return objects[index];
     }
 
-    public int getSize(){
+    public int getSize() {
         return size;
+    }
+
+    @NotNull
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<T> {
+
+        private int currentIndex;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+        @Override
+        public T next() {
+            return objects[currentIndex++];
+        }
     }
 }
