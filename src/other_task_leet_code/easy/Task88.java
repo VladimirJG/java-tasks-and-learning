@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 //88. Объединить отсортированный массив
 
 import java.util.Arrays;

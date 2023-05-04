@@ -1,4 +1,4 @@
-package other_task_leet_code.task_83;
+package other_task_leet_code.easy.task_83;
 
 public class ListNode {
 

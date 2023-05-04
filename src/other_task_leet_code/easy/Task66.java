@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 //66. Plus One
 //Вам дано большое целое число, представленное в виде массива целых чисел digits,
 // где каждое число digits[i]является цифрой целого числа. Цифры упорядочены

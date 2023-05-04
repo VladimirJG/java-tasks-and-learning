@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 
 public class ReverseListNode {
     public static void main(String[] args) {

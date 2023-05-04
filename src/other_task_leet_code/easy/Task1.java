@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 //Учитывая массив целых чисел nums и целочисленную цель,
 // вернуть индексы двух чисел так, чтобы они складывались в цель.
 //Input: nums = [2,7,11,15], target = 9

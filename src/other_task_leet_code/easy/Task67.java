@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 
 
 //Учитывая две двоичные строки a и b, верните их сумму в виде двоичной строки.

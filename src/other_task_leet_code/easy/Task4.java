@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 //Example 1:
 //
 //Input: nums1 = [1,3], nums2 = [2]

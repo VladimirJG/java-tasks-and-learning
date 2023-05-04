@@ -1,4 +1,4 @@
-package other_task_leet_code;
+package other_task_leet_code.easy;
 
 //28. Find the Index of the First Occurrence in a String
 
