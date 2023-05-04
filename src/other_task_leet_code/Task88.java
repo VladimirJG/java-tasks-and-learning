@@ -36,30 +36,16 @@ import java.util.Arrays;
 // чтобы результат слияния поместился в nums1.
 public class Task88 {
     public static void main(String[] args) {
-        int m = 3;
-        int n = 3;
-        int[] nums1 = new int[m + n];
-        int[] nums2 = new int[n];
-        for (int i = 0, j = 1; i < 3; i++, j++) {
-            nums1[i] = i + 1;
-            nums2[i] = j + j;
-        }
-        System.out.println(Arrays.toString(nums1));
-        System.out.println(Arrays.toString(nums2));
+        int m = 0;
+        int n = 1;
+        int[] nums1 = {0};
+        int[] nums2 = {1};
         merge(nums1, m, nums2, n);
+        System.out.println(Arrays.toString(nums1));
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int[] arr = new int[nums1.length];
-        for (int i = 0, l = 0; i < nums2.length; i++, l++) {
-            for (int j = 0; j < nums1.length - 1; j++) {
-                if (nums2[i] > nums1[j] && nums2[i] < nums1[j] + 1) {
-                    arr[l] = nums1[j];
-                    arr[l + 1] = nums2[i];
-                    l++;
-                }
-            }
-        }
-        System.out.println(Arrays.toString(arr));
+            System.arraycopy(nums2, 0, nums1, m, n);
+            Arrays.sort(nums1);
     }
 }
