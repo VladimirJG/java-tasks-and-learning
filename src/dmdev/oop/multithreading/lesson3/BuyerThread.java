@@ -13,22 +13,24 @@ public class BuyerThread implements Runnable {
     @Override
     public void run() {
         try {
-            while (true) {
-                if (!cashBoxes.isEmpty()) {
-                    CashBox cashBox = cashBoxes.remove();
-                    System.out.println(Thread.currentThread().getName() + " обслуживается в кассе " + cashBox);
+            synchronized (cashBoxes) {
+                while (true) {
+                    if (!cashBoxes.isEmpty()) {
+                        CashBox cashBox = cashBoxes.remove();
+                        System.out.println(Thread.currentThread().getName() + " обслуживается в кассе " + cashBox);
 
-                    Thread.sleep(5L);
+                        cashBoxes.wait(5L);
 
-                    System.out.println(Thread.currentThread().getName() + " освобождаю кассу " + cashBox);
-                    cashBoxes.add(cashBox);
-                    break;
-                } else {
-                    System.out.println(Thread.currentThread().getName() + " ожидает свободную кассу ");
-                    Thread.sleep(5L);
+                        System.out.println(Thread.currentThread().getName() + " освобождаю кассу " + cashBox);
+                        cashBoxes.add(cashBox);
+                        cashBoxes.notifyAll();
+                        break;
+                    } else {
+                        System.out.println(Thread.currentThread().getName() + " ожидает свободную кассу ");
+                        cashBoxes.wait(5L);
+                    }
                 }
             }
-
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
