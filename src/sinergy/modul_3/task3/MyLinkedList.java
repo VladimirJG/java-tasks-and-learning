@@ -161,7 +161,7 @@ public class MyLinkedList<T> {
         myLinkedList.add(5);
         myLinkedList.add(6);
         System.out.println(myLinkedList.size);
-        myLinkedList.removeElement(0);
+        myLinkedList.remove(5);
         System.out.println(myLinkedList.size);
 
         System.out.println("====================");
