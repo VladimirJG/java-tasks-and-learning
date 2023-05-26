@@ -3,16 +3,16 @@ package sinergy.modul_3.task2;
 import java.util.AbstractList;
 import java.util.Arrays;
 
-public class LLM<T> extends AbstractList<T> {
+public class ALM<T> extends AbstractList<T> {
     private int DEFAULT_CAPACITY = 15;
     private Object[] elementData;
     private int size = 0;
 
-    public LLM() {
+    public ALM() {
         elementData = new Object[DEFAULT_CAPACITY];
     }
 
-    public LLM(int capacity) {
+    public ALM(int capacity) {
         elementData = new Object[capacity];
     }
 
