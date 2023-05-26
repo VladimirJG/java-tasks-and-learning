@@ -2,12 +2,11 @@ package sinergy.modul_3.shop.data.datasource.catalog;
 
 import sinergy.modul_3.shop.data.models.Product;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
 
 public class MockCatalogDataSource extends CatalogDataSource {
     @Override
-    public AbstractList<Product> getCatalog() {
+    public ArrayList<Product> getCatalog() {
         ArrayList<Product> products = new ArrayList<>();
         products.add(new Product("01", "Phone", "Tak sebe", 12000, true));
         products.add(new Product("17", "milk", "overdue", 64, true));
