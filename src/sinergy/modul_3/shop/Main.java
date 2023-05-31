@@ -42,9 +42,5 @@ public class Main {
         new PageLoop(mainView).run();
 
 
-       /* System.out.println(shopService.getCatalog());
-        System.out.println(shopService.getCart());
-        System.out.println(shopService.addToCart(shopService.getCatalog().get(0).id,5));
-        System.out.println(shopService.getCart());*/
     }
 }
