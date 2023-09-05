@@ -5,14 +5,15 @@ package other_task_leet_code.medium;
 и каждый из их узлов содержит одну цифру. Сложите два числа и верните сумму
 в виде связанного списка.
  */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Task2 {
     public static void main(String[] args) {
-        ListNode lN1 = new ListNode(2, new ListNode(4, new ListNode(5, new ListNode(5, new ListNode(9)))));
-        ListNode lN2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        ListNode lN1 = new ListNode(2, new ListNode(8, new ListNode(9)));
+        ListNode lN2 = new ListNode(5, new ListNode(1, new ListNode(9)));
         ListNode newList = addTwoNumbers(lN1, lN2);
         System.out.println(newList);
 
@@ -28,8 +29,14 @@ public class Task2 {
         while (v1.next != null & v2.next != null) {
             res = v1.val + v2.val;
             if (res > 9) {
-                list.add((variable == 0 ? res : res + 1) - 10);
+                list.add((variable == 0 ? res - 10 : res + 1 - 10));
                 variable = 1;
+            } else if (res == 9) {
+                if (variable == 0) list.add(res);
+                else {
+                    list.add(0);
+                    variable = 1;
+                }
             } else {
                 list.add((variable == 0 ? res : res + 1));
                 variable = 0;
@@ -41,7 +48,7 @@ public class Task2 {
         res = v1.val + v2.val;
         if (variable == 0 & res <= 9) list.add(res);
         else if (variable == 0 & res > 9) {
-            list.add(res);
+            list.add(res - 10);
             variable = 1;
         } else if (variable == 1 & res < 9) {
             list.add(res + 1);
@@ -79,6 +86,9 @@ public class Task2 {
                 }
                 v1 = v1.next;
             }
+        }
+        if (variable == 1) {
+            list.add(variable);
         }
         ListNode node = new ListNode();
         Collections.reverse(list);
