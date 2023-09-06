@@ -17,8 +17,8 @@ import java.util.List;
  */
 public class Task21 {
     public static void main(String[] args) {
-        ListNode list1 = new ListNode();
-        ListNode list2 = new ListNode();
+        ListNode list1 = null;
+        ListNode list2 = null;
         ListNode list3 = mergeTwoLists(list1, list2);
         System.out.println(list3);
     }
@@ -26,6 +26,7 @@ public class Task21 {
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode list3 = null;
         List<Integer> newList = new ArrayList<>();
+
         addToList(list1, newList);
         addToList(list2, newList);
         Collections.reverse(newList);
@@ -36,6 +37,7 @@ public class Task21 {
         }
         return list3;
     }
+
 
     public static class ListNode {
         int val;
@@ -63,14 +65,11 @@ public class Task21 {
     }
 
     private static void addToList(ListNode l1, List<Integer> newList) {
-        if (l1.val != 0 && l1.next != null) {
-            newList.add(l1.val);
-            Collections.sort(newList);
-        }
         ListNode nextV1 = l1;
-        while (nextV1.next != null) {
+        while (nextV1 != null) {
             newList.add(nextV1.val);
             nextV1 = nextV1.next;
         }
+        Collections.sort(newList);
     }
 }
