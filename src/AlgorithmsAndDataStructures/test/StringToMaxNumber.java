@@ -1,13 +1,13 @@
 package AlgorithmsAndDataStructures.test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class StringToMaxNumber {
     public static void main(String[] args) {
         String str = "317995";
         System.out.println(strToMaxInt(str));
+        System.out.println(strToMaxIntLambda(str));
+
     }
 
     private static int strToMaxInt(String s) {
@@ -21,5 +21,12 @@ public class StringToMaxNumber {
             m.append(intNum.get(i));
         }
         return Integer.parseInt(String.valueOf(m));
+    }
+
+    private static int strToMaxIntLambda(String s) {
+        return Integer.parseInt(String.join("", s.chars()
+                .map(Character::getNumericValue)
+                .boxed().sorted(Collections.reverseOrder())
+                .map(String::valueOf).toArray(String[]::new)));
     }
 }
