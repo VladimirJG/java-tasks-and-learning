@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Backpack {
     public static void main(String[] args) {
-        int backpackWeight = 9;
+        int backpackWeight = 4;
 
         final Thing apple = new Thing("Apple", 20, 4);
         final Thing water = new Thing("Water", 18, 3);
@@ -22,13 +22,13 @@ public class Backpack {
         allItems.sort(Comparator.comparingDouble(Thing::resultOfDividingThePriceByWeight).reversed());
         int iterWeight = 0;
         int iterPrice = 0;
-        for (int i = 0; i < allItems.size(); i++) {
-            int j = iterWeight + allItems.get(i).getWeight();
-            if (j < backpackWeight) {
-                iterPrice += allItems.get(i).getPrice();
-                iterWeight += allItems.get(i).getWeight();
-            } else if (j > backpackWeight) {
-                iterPrice += (allItems.get(i).getPrice() / allItems.get(i).getWeight()) * (backpackWeight - iterWeight);
+        for (Thing allItem : allItems) {
+            int j = iterWeight + allItem.getWeight();
+            if (j <= backpackWeight) {
+                iterPrice += allItem.getPrice();
+                iterWeight += allItem.getWeight();
+            } else {
+                iterPrice += (allItem.getPrice() / allItem.getWeight()) * (backpackWeight - iterWeight);
                 break;
             }
         }
