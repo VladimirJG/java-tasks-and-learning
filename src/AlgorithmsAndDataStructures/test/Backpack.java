@@ -1,7 +1,7 @@
 package AlgorithmsAndDataStructures.test;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Backpack {
@@ -15,10 +15,14 @@ public class Backpack {
         allItems.add(apple);
         allItems.add(water);
         allItems.add(persimmon);
+        totalPriceOfItemsTaken(allItems, backpackWeight);
     }
 
     private static int totalPriceOfItemsTaken(List<Thing> allItems, int backpackWeight) {
-        allItems.stream().sorted(Collections.reverseOrder(Thing::))
+        allItems.sort(Comparator.comparingDouble(Thing::resultOfDividingThePriceByWeight).reversed());
+        System.out.println(allItems);
+        return 5;
+
     }
 
     public static class Thing {
@@ -32,13 +36,6 @@ public class Backpack {
             this.weight = weight;
         }
 
-        public List<Thing> sortedAtAPricePerPiece(List<Thing> listThings) {
-            for (int i = 0; i < listThings.size(); i++) {
-
-            }
-            listThings.stream().sorted(Thing::getPrice/getWeight())
-
-        }
 
         public String getTitle() {
             return title;
@@ -62,6 +59,19 @@ public class Backpack {
 
         public void setWeight(int weight) {
             this.weight = weight;
+        }
+
+        @Override
+        public String toString() {
+            return "Thing{" +
+                    "title='" + title + '\'' +
+                    ", price=" + price +
+                    ", weight=" + weight +
+                    '}';
+        }
+
+        public static double resultOfDividingThePriceByWeight(Thing thing) {
+            return (double) thing.getPrice() / thing.getWeight();
         }
     }
 }
