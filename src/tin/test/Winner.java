@@ -1,25 +1,24 @@
 package tin.test;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Winner {
     public static void main(String[] args) {
-        Map<Integer, Command> winner = winnerTeamByYear();
-        System.out.println(winner);
-        System.out.println(numberOfVictories(winner, 5));
+        int numberOfYears = 9;
+        numberOfVictories(numberOfYears);
+
     }
 
-    public static Map<Command, Integer> numberOfVictories(Map<Integer, Command> winner, int numberOfYears) {
+    public static void numberOfVictories(int numberOfYears) {
         Map<Command, Integer> map = new HashMap<>();
-        sortedByName(winner);
-
-        int count = 1;
-        winner.forEach((k, v) -> map.merge(v, map.getOrDefault(v,1), (a, b) -> b+1));
-
-        return map;
+        sortedByYearAndName(numberOfYears).forEach((k, v) -> map.merge(v, map.getOrDefault(v, 1), (a, b) -> b + 1));
+        System.out.println(map);
     }
 
-    public static Map<Integer, Command> sortedByName(Map<Integer, Command> winner) {
+    public static Map<Integer, Command> sortedByYearAndName(int numberOfYears) {
+        Map<Integer, Command> winner = winnerTeamByYear();
+        winner.keySet().removeIf(year -> year <= (LocalDate.now().getYear() - numberOfYears));
         for (Map.Entry<Integer, Command> entry : winner.entrySet()) {
             Command com = entry.getValue();
             List<String> list = new ArrayList<>();
