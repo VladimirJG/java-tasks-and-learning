@@ -14,7 +14,7 @@ public class Winner {
         sortedByName(winner);
 
         int count = 1;
-        winner.forEach((k, v) -> map.merge(v, count, (a, b) -> count + 1));
+        winner.forEach((k, v) -> map.merge(v, map.getOrDefault(v,1), (a, b) -> b+1));
 
         return map;
     }
@@ -42,6 +42,8 @@ public class Winner {
         map.put(2016, new Command("Boris", "Alex", "Marfa"));
         map.put(2021, new Command("Boris", "Alex", "Marfa"));
         map.put(2020, new Command("Alex", "Dina", "Molly"));
+        map.put(2022, new Command("Alex", "Dina", "Molly"));
+        map.put(2023, new Command("Alex", "Dina", "Molly"));
         map.put(2019, new Command("Semen", "Ghanny", "Yaya"));
         map.put(2017, new Command("Vlad", "Ted", "Nik"));
         return map;
