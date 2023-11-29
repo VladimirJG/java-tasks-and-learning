@@ -7,6 +7,7 @@ public class Winner {
     public static void main(String[] args) {
         int numberOfYears = 9;
         numberOfVictories(numberOfYears);
+//        sortedByName();
 
     }
 
@@ -19,19 +20,18 @@ public class Winner {
     public static Map<Integer, Command> sortedByYearAndName(int numberOfYears) {
         Map<Integer, Command> winner = winnerTeamByYear();
         winner.keySet().removeIf(year -> year <= (LocalDate.now().getYear() - numberOfYears));
-        for (Map.Entry<Integer, Command> entry : winner.entrySet()) {
-            Command com = entry.getValue();
-            List<String> list = new ArrayList<>();
-            list.add(com.getName1());
-            list.add(com.getName2());
-            list.add(com.getName3());
-            Collections.sort(list);
-            com.setName1(list.get(0));
-            com.setName2(list.get(1));
-            com.setName3(list.get(2));
-            entry.setValue(com);
-        }
+        winner.entrySet().forEach(Winner::accept);
         return winner;
+    }
+
+    private static void accept(Map.Entry<Integer, Command> entry) {
+        Command com = entry.getValue();
+        List<String> list = new ArrayList<>(Arrays.asList(com.getName1(), com.getName2(), com.getName3()));
+        Collections.sort(list);
+        com.setName1(list.get(0));
+        com.setName2(list.get(1));
+        com.setName3(list.get(2));
+        entry.setValue(com);
     }
 
     public static Map<Integer, Command> winnerTeamByYear() {
