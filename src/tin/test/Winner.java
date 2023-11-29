@@ -5,10 +5,8 @@ import java.util.*;
 
 public class Winner {
     public static void main(String[] args) {
-        int numberOfYears = 9;
+        int numberOfYears = 5;
         numberOfVictories(numberOfYears);
-//        sortedByName();
-
     }
 
     public static void numberOfVictories(int numberOfYears) {
@@ -37,13 +35,13 @@ public class Winner {
     public static Map<Integer, Command> winnerTeamByYear() {
         Map<Integer, Command> map = new TreeMap<>();
         map.put(2018, new Command("Pres", "Bolt", "Mike"));
-        map.put(2015, new Command("Marfa", "Tom", "Boris"));
-        map.put(2016, new Command("Boris", "Alex", "Marfa"));
-        map.put(2021, new Command("Boris", "Alex", "Marfa"));
+        map.put(2015, new Command("Maria", "Tom", "Boris"));
+        map.put(2016, new Command("Boris", "Alex", "Maria"));
+        map.put(2021, new Command("Boris", "Alex", "Maria"));
         map.put(2020, new Command("Alex", "Dina", "Molly"));
         map.put(2022, new Command("Alex", "Dina", "Molly"));
         map.put(2023, new Command("Alex", "Dina", "Molly"));
-        map.put(2019, new Command("Semen", "Ghanny", "Yaya"));
+        map.put(2019, new Command("Semen", "Ganny", "Slava"));
         map.put(2017, new Command("Vlad", "Ted", "Nik"));
         return map;
     }
