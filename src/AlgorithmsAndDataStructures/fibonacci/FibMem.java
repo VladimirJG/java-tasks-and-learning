@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FibMem {
     public static void main(String[] args) {
-        int n = 5;
+        int n = 2;
         long[] mem = new long[n + 1];
         Arrays.fill(mem, -5);
         System.out.println(fibMem(n, mem));

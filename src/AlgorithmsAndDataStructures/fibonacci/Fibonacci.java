@@ -3,7 +3,7 @@ package AlgorithmsAndDataStructures.fibonacci;
 public class Fibonacci {
     public static void main(String[] args) {
 //        System.out.println(fibNaive(3));
-        System.out.println(fibEffective(5));
+        System.out.println(fibEffective(15));
     }
 
 
