@@ -42,7 +42,29 @@ class Worker {
 
     public void main() {
         long before = System.currentTimeMillis();
-        work();
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                work();
+            }
+        });
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                work();
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         long after = System.currentTimeMillis();
         System.out.println("times begin: " + (after - before) + " ms");
         System.out.println(list1.size());
