@@ -11,26 +11,33 @@ public class SynchronizedBlock {
 }
 
 class Worker {
+
+    final Object lock1 = new Object();
+    final Object lock2 = new Object();
     Random random = new Random();
     List<Integer> list1 = new ArrayList<>();
     List<Integer> list2 = new ArrayList<>();
 
     public void addList1() {
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        synchronized (lock1) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            list1.add(random.nextInt(1, 50));
         }
-        list1.add(random.nextInt(1, 50));
     }
 
     public void addList2() {
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        synchronized (lock2) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            list2.add(random.nextInt(1, 50));
         }
-        list2.add(random.nextInt(1, 50));
     }
 
     public void work() {
