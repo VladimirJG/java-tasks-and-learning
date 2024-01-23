@@ -41,11 +41,15 @@ class Task {
     }
 
     public void firstThread() {
+        lock.lock();
         increment();
+        lock.unlock();
     }
 
     public void secondThread() {
+        lock.lock();
         increment();
+        lock.unlock();
     }
 
     public void showCounter() {
