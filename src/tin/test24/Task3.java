@@ -34,7 +34,6 @@ public class Task3 {
     }
 }
 
-
 record Present(int dayIn, int timeForWork, int dayOut) {
 
     @Override

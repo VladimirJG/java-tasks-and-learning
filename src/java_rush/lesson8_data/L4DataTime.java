@@ -5,36 +5,36 @@ import java.util.Date;
 public class L4DataTime {
     public static void main(String[] args) throws InterruptedException {
         //Получение текущей даты:
-       /* Date today = new Date();
+       /* date_my today = new date_my();
         System.out.println("Current date: " + today);*/
 
         //Вычисление разницы между двумя датами:
 
 
-       /* Date currentTime = new Date();           //получаем текущую дату и время
+       /* date_my currentTime = new date_my();           //получаем текущую дату и время
         Thread.sleep(3000);                      //ждём 3 секунды – 3000 миллисекунд
-        Date newTime = new Date();               //получаем новое текущее время
+        date_my newTime = new date_my();               //получаем новое текущее время
 
         long msDelay = newTime.getTime() - currentTime.getTime(); //вычисляем разницу
         System.out.println("Time distance is: " + msDelay + " in ms");*/
 
 
         //Наступило ли уже некоторое время:
-       /* Date startTime = new Date();
+       /* date_my startTime = new date_my();
 
         long endTime = startTime.getTime() + 5000;   //    +5 секунд
-        Date endDate = new Date(endTime);
+        date_my endDate = new date_my(endTime);
 
         Thread.sleep(3000);              // ждем 3 секунды
 
-        Date currentTime = new Date();
+        date_my currentTime = new date_my();
         if (currentTime.after(endDate))//проверяем что время currentTime после endDate
         {
             System.out.println("End time!");
         }*/
 
         //Сколько прошло времени с начала сегодняшнего дня:
-       /* Date currentTime = new Date();
+       /* date_my currentTime = new date_my();
         int hours = currentTime.getHours();
         int mins = currentTime.getMinutes();
         int secs = currentTime.getSeconds();

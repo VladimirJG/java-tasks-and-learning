@@ -10,7 +10,7 @@ public class Test {
         InputString inputString = new InputString("aabbvvvvggdddcc");
 
         List<String> list = numOfChar(inputString);
-//        System.out.println(list);
+        System.out.println(list);
         System.out.println(LocalDateTime.now());
 
     }
