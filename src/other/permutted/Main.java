@@ -1,8 +1,6 @@
 package other.permutted;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +17,8 @@ public class Main {
         if (wordOrig.length() != wordCandidate.length()) {
             return false;
         }
-        return sortCharFromString(wordOrig).equals(sortCharFromString(wordCandidate));
+//        return sortCharFromString(wordOrig).equals(sortCharFromString(wordCandidate));
+        return mapFromString(wordOrig).equals(mapFromString(wordCandidate));
     }
 
     private static List<Character> sortCharFromString(String str) {
@@ -29,5 +28,13 @@ public class Main {
         }
         Collections.sort(list);
         return list;
+    }
+
+    private static Map<Character, Integer> mapFromString(String str) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        return map;
     }
 }
