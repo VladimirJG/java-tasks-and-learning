@@ -14,5 +14,10 @@ public class X {
         Integer d = c;
         System.out.println(a == b);
         System.out.println(c == d);
+
+        String str1 = new String("Hello");
+        String str2 = new String("Hello");
+
+        System.out.println(str1 == str2);
     }
 }
